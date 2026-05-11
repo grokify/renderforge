@@ -1,0 +1,59 @@
+{
+  "baseUrl": "https://aistandardsio.github.io",
+  "brand": {
+    "logoUrl": "https://aistandardsio.github.io/icon.png",
+    "logoAlt": "AIStandards.io",
+    "title": "AI",
+    "titleSecondary": "Standards.io",
+    "titleGradient": true,
+    "homeUrl": "https://aistandardsio.github.io"
+  },
+  "menu": [
+    {
+      "type": "mega-menu",
+      "label": "Protocols",
+      "dataUrl": "https://aistandardsio.github.io/data/protocols.json"
+    },
+    {
+      "type": "link",
+      "label": "Projects",
+      "url": "https://aistandardsio.github.io/projects"
+    },
+    {
+      "type": "dropdown",
+      "label": "Developers",
+      "items": [
+        { "label": "Guides", "url": "https://aistandardsio.github.io/guides" },
+        { "label": "Examples", "url": "https://aistandardsio.github.io/examples" }
+      ]
+    },
+    {
+      "type": "dropdown",
+      "label": "Community",
+      "items": [
+        { "label": "Blog", "url": "https://aistandardsio.github.io/blog" },
+        { "label": "Releases", "url": "https://aistandardsio.github.io/releases" },
+        { "label": "RSS Feed", "url": "https://aistandardsio.github.io/blog/atom.xml", "external": true, "icon": "rss" }
+      ],
+      "dividerAfter": 1
+    }
+  ],
+  "github": {
+    "url": "https://github.com/aistandardsio",
+    "label": "GitHub"
+  },
+  "theme": {
+    "primaryColor": "#ff6b00",
+    "secondaryColor": "#00d4ff",
+    "backgroundColor": "#0a0a0f",
+    "textColor": "#e4e4ed",
+    "mutedColor": "#8888a0",
+    "borderColor": "#1e1e2e",
+    "titleGradient": "linear-gradient(135deg, #ff6b00, #00d4ff)"
+  },
+  "categoryPaths": {
+    "protocol": "/protocols",
+    "adapter": "/adapters",
+    "tool": "/tools"
+  }
+}

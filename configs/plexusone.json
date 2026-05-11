@@ -1,0 +1,62 @@
+{
+  "baseUrl": "https://plexusone.dev",
+  "brand": {
+    "logoUrl": "https://plexusone.dev/icon.png",
+    "logoAlt": "PlexusOne",
+    "title": "Plexus",
+    "titleSecondary": "One",
+    "titleGradient": true,
+    "homeUrl": "https://plexusone.dev"
+  },
+  "menu": [
+    {
+      "type": "mega-menu",
+      "label": "Products",
+      "dataUrl": "https://plexusone.dev/data/products.json"
+    },
+    {
+      "type": "link",
+      "label": "Projects",
+      "url": "https://plexusone.dev/projects"
+    },
+    {
+      "type": "dropdown",
+      "label": "Developers",
+      "items": [
+        { "label": "Academy", "url": "https://plexusone.dev/academy" },
+        { "label": "MCP", "url": "https://plexusone.dev/mcp" },
+        { "label": "Tools", "url": "https://plexusone.dev/tools/" }
+      ]
+    },
+    {
+      "type": "dropdown",
+      "label": "Community",
+      "items": [
+        { "label": "Blog", "url": "https://plexusone.dev/blog" },
+        { "label": "Releases", "url": "https://plexusone.dev/releases" },
+        { "label": "Philosophy", "url": "https://plexusone.dev/#philosophy" },
+        { "label": "RSS Feed", "url": "https://plexusone.dev/blog/atom.xml", "external": true, "icon": "rss" }
+      ],
+      "dividerAfter": 2
+    }
+  ],
+  "github": {
+    "url": "https://github.com/plexusone",
+    "label": "GitHub"
+  },
+  "theme": {
+    "primaryColor": "#06b6d4",
+    "secondaryColor": "#8b5cf6",
+    "backgroundColor": "#0a0e1a",
+    "textColor": "#e2e8f0",
+    "mutedColor": "#64748b",
+    "borderColor": "#1e293b",
+    "titleGradient": "linear-gradient(135deg, #06b6d4, #8b5cf6)"
+  },
+  "categoryPaths": {
+    "library": "/libraries",
+    "agent": "/agents",
+    "application": "/applications",
+    "specification": "/specifications"
+  }
+}
