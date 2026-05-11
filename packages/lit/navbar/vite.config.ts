@@ -6,18 +6,12 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'LitNavbar',
-      fileName: (format) => `lit-navbar.${format === 'es' ? 'js' : 'cjs'}`,
-      formats: ['es'],
+      fileName: () => 'lit-navbar.js',
+      formats: ['iife'],
     },
-    rollupOptions: {
-      external: ['lit'],
-      output: {
-        globals: {
-          lit: 'Lit',
-        },
-      },
-    },
-    minify: 'terser',
+    // Bundle everything for standalone CDN usage
+    // Lit is included in the bundle
+    minify: true,
     sourcemap: true,
   },
 });
