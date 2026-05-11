@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lit Navbar Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0a0e1a;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+
+    main {
+      padding-top: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .demo-section {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #111827;
+      border-radius: 8px;
+      border: 1px solid #1e293b;
+    }
+
+    .demo-section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+    }
+
+    pre {
+      background: #1e293b;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      font-size: 0.875rem;
+    }
+
+    code {
+      color: #06b6d4;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar with inline config -->
+  <lit-navbar id="demo-navbar"></lit-navbar>
+
+  <main id="main-content">
+    <h1>Lit Navbar Demo</h1>
+    <p>A configurable navigation web component built with Lit.</p>
+
+    <div class="demo-section">
+      <h2>Usage</h2>
+      <pre><code>&lt;lit-navbar .config=${JSON.stringify(config)}&gt;&lt;/lit-navbar&gt;
+
+// Or load from URL
+&lt;lit-navbar config-url="/config/navbar.json"&gt;&lt;/lit-navbar&gt;</code></pre>
+    </div>
+
+    <div class="demo-section">
+      <h2>Configuration</h2>
+      <pre><code id="config-display"></code></pre>
+    </div>
+  </main>
+
+  <script type="module">
+    import './src/index.ts';
+
+    // Demo configuration
+    const config = {
+      baseUrl: '',
+      brand: {
+        logoUrl: 'https://plexusone.dev/icon.png',
+        logoAlt: 'Demo',
+        title: 'Lit',
+        titleSecondary: 'Navbar',
+        titleGradient: true,
+      },
+      menu: [
+        {
+          type: 'mega-menu',
+          label: 'Products',
+          data: {
+            categories: {
+              library: { label: 'Libraries', description: 'Code libraries', order: 1 },
+              agent: { label: 'Agents', description: 'AI agents', order: 2 },
+            },
+            products: [
+              { name: 'Example Lib', slug: 'example-lib', tagline: 'A demo library', category: 'library', featured: true },
+              { name: 'Demo Agent', slug: 'demo-agent', tagline: 'A demo agent', category: 'agent' },
+            ],
+          },
+        },
+        { type: 'link', label: 'Docs', url: '/docs' },
+        {
+          type: 'dropdown',
+          label: 'Resources',
+          items: [
+            { label: 'Blog', url: '/blog' },
+            { label: 'Releases', url: '/releases' },
+          ],
+          dividerAfter: 1,
+        },
+      ],
+      github: {
+        url: 'https://github.com/grokify/lit-components',
+        label: 'GitHub',
+      },
+      theme: {
+        primaryColor: '#06b6d4',
+        secondaryColor: '#8b5cf6',
+        titleGradient: 'linear-gradient(135deg, #06b6d4, #8b5cf6)',
+      },
+    };
+
+    // Apply config to navbar
+    document.getElementById('demo-navbar').config = config;
+
+    // Display config
+    document.getElementById('config-display').textContent = JSON.stringify(config, null, 2);
+  </script>
+</body>
+</html>
