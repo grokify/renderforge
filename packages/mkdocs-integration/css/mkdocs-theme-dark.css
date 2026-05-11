@@ -1,0 +1,346 @@
+/**
+ * RenderForge MkDocs Dark Theme
+ *
+ * A complete dark theme for MkDocs Material that matches
+ * the RenderForge/AIStandards.io design system.
+ *
+ * Includes:
+ * - Color palette variables
+ * - Dark mode (slate) styling
+ * - Light mode styling
+ * - Navigation offset for unified navbar
+ *
+ * Usage in mkdocs.yml:
+ *   extra_css:
+ *     - https://your-domain.com/css/mkdocs-theme-dark.css
+ *
+ * Customize by copying this file and modifying the color variables.
+ */
+
+/* ============================================
+   Color Palette Variables
+   ============================================ */
+:root {
+  /* Primary dark background */
+  --rf-background: #0a0a0f;
+  /* Card/elevated surfaces */
+  --rf-background-card: #12121a;
+  /* Code blocks, subtle backgrounds */
+  --rf-background-code: #1a1a25;
+  /* Primary text */
+  --rf-foreground: #e4e4ed;
+  /* Secondary/muted text */
+  --rf-foreground-muted: #8888a0;
+  /* Dimmed text */
+  --rf-foreground-dim: #55556a;
+  /* Primary accent */
+  --rf-accent: #ff6b00;
+  --rf-accent-hover: #e05800;
+  /* Secondary accent */
+  --rf-secondary: #00d4ff;
+  --rf-secondary-light: #22e4ff;
+  /* Tertiary accent */
+  --rf-tertiary: #a855f7;
+  --rf-tertiary-light: #c084fc;
+  /* Borders */
+  --rf-border: #1e1e2e;
+  --rf-border-hover: #2e2e42;
+  /* Status colors */
+  --rf-success: #4ade80;
+  --rf-warning: #fbbf24;
+  --rf-error: #ef4444;
+}
+
+/* ============================================
+   MkDocs Material - Dark Mode (Slate)
+   ============================================ */
+[data-md-color-scheme="slate"] {
+  /* Primary colors */
+  --md-primary-fg-color: var(--rf-accent);
+  --md-primary-fg-color--light: #ff8533;
+  --md-primary-fg-color--dark: var(--rf-accent-hover);
+  --md-primary-bg-color: var(--rf-foreground);
+  --md-primary-bg-color--light: var(--rf-foreground-muted);
+
+  /* Accent colors */
+  --md-accent-fg-color: var(--rf-secondary);
+  --md-accent-fg-color--transparent: #00d4ff1a;
+  --md-accent-bg-color: var(--rf-secondary);
+  --md-accent-bg-color--light: var(--rf-secondary-light);
+
+  /* Default colors */
+  --md-default-fg-color: var(--rf-foreground);
+  --md-default-fg-color--light: var(--rf-foreground-muted);
+  --md-default-fg-color--lighter: #e4e4ed9e;
+  --md-default-fg-color--lightest: #e4e4ed52;
+  --md-default-bg-color: var(--rf-background);
+  --md-default-bg-color--light: var(--rf-background-card);
+  --md-default-bg-color--lighter: var(--rf-background-code);
+  --md-default-bg-color--lightest: var(--rf-border);
+
+  /* Code colors */
+  --md-code-fg-color: var(--rf-secondary);
+  --md-code-bg-color: var(--rf-background-code);
+  --md-code-hl-color: #ff6b0026;
+  --md-code-hl-keyword-color: var(--rf-tertiary);
+  --md-code-hl-function-color: var(--rf-secondary);
+  --md-code-hl-string-color: var(--rf-success);
+  --md-code-hl-number-color: var(--rf-warning);
+  --md-code-hl-comment-color: var(--rf-foreground-muted);
+
+  /* Typography */
+  --md-typeset-color: var(--rf-foreground);
+  --md-typeset-a-color: var(--rf-secondary);
+
+  /* Footer */
+  --md-footer-fg-color: var(--rf-foreground);
+  --md-footer-fg-color--light: var(--rf-foreground-muted);
+  --md-footer-bg-color: var(--rf-background-card);
+  --md-footer-bg-color--dark: var(--rf-background);
+
+  /* Admonitions */
+  --md-admonition-fg-color: var(--rf-foreground);
+  --md-admonition-bg-color: var(--rf-background-card);
+
+  /* Tables */
+  --md-typeset-table-color: var(--rf-border);
+}
+
+/* ============================================
+   MkDocs Material - Light Mode
+   ============================================ */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #e05800;
+  --md-primary-fg-color--light: #ff6b00;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #f4f6fa;
+
+  --md-accent-fg-color: #0891b2;
+  --md-accent-fg-color--transparent: #0891b21a;
+
+  --md-code-fg-color: #0891b2;
+  --md-code-bg-color: #eef1f6;
+  --md-typeset-a-color: #0891b2;
+
+  --md-default-bg-color: #f4f6fa;
+  --md-default-fg-color: #0f172a;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+:root {
+  --md-text-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --md-code-font: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* ============================================
+   Custom Styles - Dark Mode
+   ============================================ */
+
+/* Header styling with gradient */
+[data-md-color-scheme="slate"] .md-header {
+  background: linear-gradient(135deg, var(--rf-background) 0%, var(--rf-background-card) 100%);
+  border-bottom: 1px solid var(--rf-border);
+}
+
+/* Navigation links */
+[data-md-color-scheme="slate"] .md-nav__link:hover {
+  color: var(--rf-accent);
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  color: var(--rf-accent);
+  font-weight: 500;
+}
+
+/* Sidebar */
+[data-md-color-scheme="slate"] .md-sidebar {
+  background-color: var(--rf-background);
+}
+
+/* Code blocks */
+.md-typeset code {
+  border-radius: 4px;
+  padding: 0.1em 0.3em;
+}
+
+.md-typeset pre > code {
+  border-radius: 8px;
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre {
+  border: 1px solid var(--rf-border);
+}
+
+/* Tables */
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) {
+  border: 1px solid var(--rf-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) th {
+  background-color: var(--rf-background-code);
+  border-bottom: 1px solid var(--rf-border);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table:not([class]) td {
+  border-bottom: 1px solid var(--rf-border);
+}
+
+/* Admonitions */
+[data-md-color-scheme="slate"] .md-typeset .admonition,
+[data-md-color-scheme="slate"] .md-typeset details {
+  border-radius: 8px;
+  border: 1px solid var(--rf-border);
+  background-color: var(--rf-background-card);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.note {
+  border-left-color: var(--rf-secondary);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.info {
+  border-left-color: var(--rf-secondary);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.tip {
+  border-left-color: var(--rf-tertiary);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.warning {
+  border-left-color: var(--rf-warning);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .admonition.danger {
+  border-left-color: var(--rf-error);
+}
+
+/* Search - Dark Mode */
+@media screen {
+  [data-md-color-scheme="slate"] .md-search__form {
+    background-color: var(--rf-background-code) !important;
+    border: 1px solid var(--rf-border) !important;
+  }
+
+  [data-md-color-scheme="slate"] .md-search__input {
+    background-color: transparent !important;
+    color: var(--rf-foreground) !important;
+  }
+
+  [data-md-color-scheme="slate"] .md-search__input::placeholder {
+    color: var(--rf-foreground-muted) !important;
+  }
+
+  [data-md-color-scheme="slate"] .md-search__icon {
+    color: var(--rf-foreground-muted) !important;
+  }
+
+  [data-md-color-scheme="slate"] .md-search__output {
+    background-color: var(--rf-background-card) !important;
+    border: 1px solid var(--rf-border) !important;
+  }
+
+  [data-md-color-scheme="slate"] .md-search-result__link:hover {
+    background-color: var(--rf-background-code) !important;
+  }
+}
+
+/* Tabs */
+[data-md-color-scheme="slate"] .md-typeset .tabbed-labels > label:hover {
+  color: var(--rf-accent);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .tabbed-labels > .tabbed-label--active {
+  color: var(--rf-accent);
+}
+
+/* Links */
+[data-md-color-scheme="slate"] .md-typeset a:hover {
+  color: var(--rf-secondary-light);
+}
+
+/* Buttons */
+[data-md-color-scheme="slate"] .md-typeset .md-button {
+  border-color: var(--rf-accent);
+  color: var(--rf-accent);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button:hover {
+  background-color: var(--rf-accent);
+  color: var(--rf-background);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary {
+  background-color: var(--rf-accent);
+  border-color: var(--rf-accent);
+  color: var(--rf-background);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary:hover {
+  background-color: var(--rf-accent-hover);
+  border-color: var(--rf-accent-hover);
+}
+
+/* Footer */
+[data-md-color-scheme="slate"] .md-footer {
+  background-color: var(--rf-background-card);
+  border-top: 1px solid var(--rf-border);
+}
+
+/* ============================================
+   Unified Navigation Bar Offset
+   ============================================ */
+
+/* Position navbar container */
+#navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* Offset MkDocs header for unified navbar (64px) */
+.md-header {
+  top: 64px;
+}
+
+/* Offset sidebar for navbar + header */
+.md-sidebar {
+  top: calc(64px + var(--md-header-height, 48px));
+  height: calc(100vh - 64px - var(--md-header-height, 48px));
+}
+
+/* Offset main content area */
+.md-main {
+  margin-top: 64px;
+}
+
+/* Offset search modal */
+.md-search__overlay {
+  top: 64px;
+}
+
+/* Offset announcement bar if present */
+.md-banner {
+  top: 64px;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 76.1875em) {
+  .md-sidebar--primary {
+    top: calc(64px + var(--md-header-height, 48px));
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .md-header {
+    top: 64px;
+  }
+
+  .md-nav__source {
+    top: 64px;
+  }
+}

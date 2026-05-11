@@ -1,0 +1,84 @@
+/**
+ * RenderForge MkDocs Navigation Offset CSS
+ *
+ * Positions MkDocs Material theme elements to accommodate
+ * a fixed 64px unified navigation bar at the top.
+ *
+ * Usage in mkdocs.yml:
+ *   extra_css:
+ *     - https://your-domain.com/css/mkdocs-nav-offset.css
+ */
+
+/* ============================================
+   Navbar Container Positioning
+   ============================================ */
+
+#navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* ============================================
+   MkDocs Material Header Offset
+   ============================================ */
+
+/* Position Material header below unified navbar */
+.md-header {
+  top: 64px;
+}
+
+/* ============================================
+   Sidebar Positioning
+   ============================================ */
+
+/* Offset sidebar for navbar (64px) + Material header */
+.md-sidebar {
+  top: calc(64px + var(--md-header-height, 48px));
+  height: calc(100vh - 64px - var(--md-header-height, 48px));
+}
+
+/* ============================================
+   Main Content Offset
+   ============================================ */
+
+/* Offset main content area */
+.md-main {
+  margin-top: 64px;
+}
+
+/* ============================================
+   Search and Other Elements
+   ============================================ */
+
+/* Offset search modal */
+.md-search__overlay {
+  top: 64px;
+}
+
+/* Offset announcement bar if present */
+.md-banner {
+  top: 64px;
+}
+
+/* ============================================
+   Mobile Adjustments
+   ============================================ */
+
+@media screen and (max-width: 76.1875em) {
+  .md-sidebar--primary {
+    top: calc(64px + var(--md-header-height, 48px));
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .md-header {
+    top: 64px;
+  }
+
+  .md-nav__source {
+    top: 64px;
+  }
+}

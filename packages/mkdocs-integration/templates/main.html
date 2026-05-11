@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block header %}
+{#
+  RenderForge Unified Navigation Template for MkDocs
+
+  Instructions:
+  1. Copy this file to docs/overrides/main.html
+  2. Update the configuration below with your site details
+  3. Add to mkdocs.yml:
+     theme:
+       custom_dir: docs/overrides
+     extra_css:
+       - https://YOUR-DOMAIN.com/css/mkdocs-nav-offset.css
+  4. Deploy: mkdocs gh-deploy --force
+
+  IMPORTANT: Use your custom domain (not *.github.io) to avoid CORS issues
+#}
+
+<!-- Unified Navigation Container -->
+<div id="navbar-container"></div>
+
+<!-- Load lit-navbar component -->
+<script src="https://YOUR-DOMAIN.com/js/lit-navbar.js"></script>
+
+<script>
+  // Wait for the custom element to be defined, then create and configure
+  customElements.whenDefined('lit-navbar').then(function() {
+    var container = document.getElementById('navbar-container');
+    var navbar = document.createElement('lit-navbar');
+
+    // ========================================
+    // CONFIGURE YOUR NAVBAR HERE
+    // ========================================
+    navbar.config = {
+      // Base URL for your main site
+      baseUrl: 'https://YOUR-DOMAIN.com',
+
+      // Brand configuration
+      brand: {
+        logoUrl: 'https://YOUR-DOMAIN.com/icon.png',
+        logoAlt: 'Your Site',
+        // Three-segment title: "Your" (accent) + "Brand" (text) + ".io" (muted)
+        title: 'Your',
+        titlePrimary: 'Brand',
+        titleMuted: '.io',
+        homeUrl: 'https://YOUR-DOMAIN.com'
+      },
+
+      // Navigation menu items
+      menu: [
+        {
+          type: 'link',
+          label: 'Standards',
+          url: 'https://YOUR-DOMAIN.com/standards'
+        },
+        {
+          type: 'link',
+          label: 'Docs',
+          url: 'https://YOUR-DOMAIN.com/docs'
+        },
+        {
+          type: 'link',
+          label: 'About',
+          url: 'https://YOUR-DOMAIN.com/about'
+        }
+        // Add dropdown menus like this:
+        // {
+        //   type: 'dropdown',
+        //   label: 'Resources',
+        //   items: [
+        //     { label: 'Blog', url: 'https://YOUR-DOMAIN.com/blog' },
+        //     { label: 'API', url: 'https://YOUR-DOMAIN.com/api' }
+        //   ]
+        // }
+      ],
+
+      // GitHub button (optional)
+      github: {
+        url: 'https://github.com/YOUR-ORG',
+        label: 'GitHub'
+      },
+
+      // Theme colors
+      theme: {
+        primaryColor: '#ff6b00',      // Accent color (brand)
+        secondaryColor: '#00d4ff',    // Secondary accent
+        backgroundColor: '#0a0a0f',   // Navbar background
+        textColor: '#e4e4ed',         // Primary text
+        mutedColor: '#8888a0',        // Muted text
+        borderColor: '#1e1e2e'        // Borders
+      }
+    };
+    // ========================================
+
+    container.appendChild(navbar);
+  });
+</script>
+
+{# Include the original Material header (with search, repo link) #}
+{{ super() }}
+{% endblock %}
