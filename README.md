@@ -29,9 +29,9 @@ RenderForge is part of the Forge ecosystem:
 | Project | Description |
 |---------|-------------|
 | [systemforge](https://github.com/grokify/systemforge) | API microservices |
-| [agentforge](https://github.com/grokify/agentforge) | Agent microservices |
+| [agentkit](https://github.com/plexusone/agentkit) | Agent microservices |
 | [systemforge-web](https://github.com/grokify/systemforge-web) | Web application frontend |
-| [dashforge](https://github.com/grokify/dashforge) | Analytics dashboard (Metabase-like) |
+| [dashforge](https://github.com/plexusone/dashforge) | Analytics dashboard (Metabase-like) |
 | **renderforge** | Cross-platform UI components |
 
 ## Structure
