@@ -71,6 +71,20 @@ export const navStyles = [
       align-items: baseline;
     }
 
+    .nav-title-accent {
+      color: var(--ln-primary);
+    }
+
+    .nav-title-primary {
+      color: var(--ln-text);
+    }
+
+    .nav-title-muted {
+      font-weight: 400;
+      color: var(--ln-text-muted);
+    }
+
+    /* Legacy: kept for backward compatibility */
     .nav-title-light {
       font-weight: 400;
       color: var(--ln-text-muted);

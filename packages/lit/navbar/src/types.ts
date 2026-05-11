@@ -10,11 +10,15 @@ export interface NavbarBrand {
   logoUrl?: string;
   /** Alt text for the logo */
   logoAlt?: string;
-  /** Primary title text */
+  /** Primary title text (displayed in accent color) */
   title: string;
-  /** Secondary title text (displayed after primary) */
+  /** Secondary title text (displayed in normal text color) */
+  titlePrimary?: string;
+  /** Tertiary title text (displayed in muted color, e.g., ".io") */
+  titleMuted?: string;
+  /** @deprecated Use titlePrimary and titleMuted instead */
   titleSecondary?: string;
-  /** Apply gradient styling to primary title */
+  /** Apply gradient styling to title (overrides accent color) */
   titleGradient?: boolean;
   /** Home URL when clicking the brand */
   homeUrl?: string;

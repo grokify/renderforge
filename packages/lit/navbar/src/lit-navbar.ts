@@ -203,6 +203,9 @@ export class LitNavbar extends LitElement {
     const { brand, baseUrl = '' } = this.config;
     const homeUrl = brand.homeUrl || baseUrl || '/';
 
+    // Support new three-segment title or legacy titleSecondary
+    const hasNewFormat = brand.titlePrimary || brand.titleMuted;
+
     return html`
       <a href="${homeUrl}" class="nav-brand">
         ${brand.logoUrl
@@ -211,10 +214,15 @@ export class LitNavbar extends LitElement {
         <span class="nav-title">
           ${brand.titleGradient
             ? html`<span class="gradient-text">${brand.title}</span>`
-            : html`<span>${brand.title}</span>`}
-          ${brand.titleSecondary
-            ? html`<span class="nav-title-light">${brand.titleSecondary}</span>`
-            : nothing}
+            : html`<span class="nav-title-accent">${brand.title}</span>`}
+          ${hasNewFormat
+            ? html`
+                ${brand.titlePrimary ? html`<span class="nav-title-primary">${brand.titlePrimary}</span>` : nothing}
+                ${brand.titleMuted ? html`<span class="nav-title-muted">${brand.titleMuted}</span>` : nothing}
+              `
+            : brand.titleSecondary
+              ? html`<span class="nav-title-light">${brand.titleSecondary}</span>`
+              : nothing}
         </span>
       </a>
     `;
