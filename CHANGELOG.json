@@ -1,0 +1,38 @@
+{
+  "irVersion": "1.0",
+  "project": "renderforge",
+  "repository": "https://github.com/grokify/renderforge",
+  "versioning": "semver",
+  "commitConvention": "conventional",
+  "maintainers": ["grokify"],
+  "releases": [
+    {
+      "version": "v0.1.0",
+      "date": "2026-05-11",
+      "commit": "877d517",
+      "highlights": [
+        { "description": "Configurable navigation web component built with Lit for unified navigation across React and MkDocs sites" },
+        { "description": "MkDocs Material integration package with templates and CSS for seamless documentation subsites" }
+      ],
+      "added": [
+        { "description": "`@renderforge/lit-navbar` - Configurable navigation web component with dropdown menus, mobile support, and theming", "commit": "3e646ea" },
+        { "description": "Three-segment title styling (accent, primary, muted) for brand customization", "commit": "a9829b7" },
+        { "description": "IIFE build format for cross-origin loading without CORS issues", "commit": "e29b02f" },
+        { "description": "Mega menu and mobile menu components", "commit": "9d9ed6c" },
+        { "description": "PlexusOne and AIStandards.io example configurations", "commit": "3e0b8f2" },
+        { "description": "`@renderforge/mkdocs-integration` - Templates and CSS for MkDocs Material theme integration", "commit": "ee929f5" },
+        { "description": "MkDocs override template (`main.html`) with navbar configuration", "commit": "ee929f5" },
+        { "description": "`mkdocs-nav-offset.css` for positioning MkDocs elements below unified navbar", "commit": "ee929f5" },
+        { "description": "`mkdocs-theme-dark.css` full dark theme matching AIStandards.io design system", "commit": "ee929f5" },
+        { "description": "Setup script for automated MkDocs integration", "commit": "ee929f5" },
+        { "description": "Monorepo infrastructure with pnpm workspaces", "commit": "c2dfd77" }
+      ],
+      "documentation": [
+        { "description": "Comprehensive lit-navbar README with API reference and examples", "commit": "9ac51cb" },
+        { "description": "React + MkDocs unified navigation tutorial with troubleshooting guide", "commit": "7d2de01" },
+        { "description": "Build instructions and asset source documentation", "commit": "d5acd30" },
+        { "description": "Project README with cross-platform vision", "commit": "1e40676" }
+      ]
+    }
+  ]
+}
