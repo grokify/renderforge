@@ -1,0 +1,33 @@
+{
+  "name": "renderforge",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Cross-platform UI component library for web, mobile, and native applications",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm -r --parallel dev",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "pnpm -r clean"
+  },
+  "keywords": [
+    "components",
+    "ui",
+    "lit",
+    "material",
+    "flutter",
+    "android",
+    "ios",
+    "cross-platform"
+  ],
+  "author": "grokify",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grokify/renderforge.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

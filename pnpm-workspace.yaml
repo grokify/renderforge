@@ -1,0 +1,6 @@
+packages:
+  - 'packages/lit/*'
+  - 'packages/material/*'
+  - 'packages/flutter/*'
+  - 'packages/native/*'
+  - 'tokens'
