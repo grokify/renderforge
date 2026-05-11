@@ -32,6 +32,43 @@ your-domain.com/
 - Node.js 18+ for building the navbar
 - Python 3.x with MkDocs Material for documentation sites
 
+## Building the Navbar Component
+
+The `lit-navbar.js` file must be built from the RenderForge source. It is **not** published to npm.
+
+### Option A: Build from source
+
+```bash
+# Clone renderforge
+git clone https://github.com/grokify/renderforge.git
+cd renderforge/packages/lit/navbar
+
+# Install dependencies and build
+npm install
+npm run build
+
+# The built file is at:
+# dist/lit-navbar.js
+```
+
+### Option B: Copy from existing site
+
+If you're adding a subsite to an existing deployment (e.g., aistandards.io), the navbar is already hosted. Skip building and reference it directly:
+
+```html
+<script src="https://aistandards.io/js/lit-navbar.js"></script>
+```
+
+### Update workflow
+
+When updating the navbar:
+
+1. Make changes in `renderforge/packages/lit/navbar/src/`
+2. Build: `npm run build`
+3. Copy `dist/lit-navbar.js` to your main site's `/js/` directory
+4. Deploy the main site
+5. All subsites automatically get the update (they load from main site)
+
 ## Step 1: Set Up the Main Site
 
 ### 1.1 Add lit-navbar to your React site
@@ -114,12 +151,20 @@ Ensure your build process preserves these files in the output:
 ```
 docs/                    # GitHub Pages output directory
 ├── js/
-│   └── lit-navbar.js   # The navbar component
+│   └── lit-navbar.js   # Built from renderforge/packages/lit/navbar
 ├── css/
-│   └── mkdocs-nav-offset.css  # MkDocs positioning CSS
+│   └── mkdocs-nav-offset.css  # From renderforge/packages/mkdocs-integration/css/
 ├── icon.png            # Your logo
 └── index.html          # Main site
 ```
+
+**Source files:**
+
+| Asset | Source Location |
+|-------|-----------------|
+| `lit-navbar.js` | `renderforge/packages/lit/navbar/dist/lit-navbar.js` |
+| `mkdocs-nav-offset.css` | `renderforge/packages/mkdocs-integration/css/mkdocs-nav-offset.css` |
+| `mkdocs-theme-dark.css` | `renderforge/packages/mkdocs-integration/css/mkdocs-theme-dark.css` (optional full theme)
 
 Example Vite config to copy shared assets:
 
